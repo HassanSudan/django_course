@@ -11,24 +11,23 @@ class Category(models.Model):
         return self.name
     
 
-    class Meta:
+class Meta:
         verbose_name_plural = 'Categories'
 
-    class Post(models.Model):
+class Post(models.Model):
         title = models.CharField(max_length=100)
         slug = models.SlugField(max_length=200)
-        Category = models.ForeignKey(Category, on_delete=models.CASCADE) 
+        Category = models.ForeignKey("Category", on_delete=models.CASCADE) 
         image = models.ImageField(upload_to='static/image')
         content = models.TextField()
         puplished = models.BooleanField(default=False)
-        tags = models.CharField(20)
+        tags = models.CharField(max_length=20)
+        created = models.DateTimeField(auto_now_add=True)
+        created_by = models.IntegerField()
 
-    created = models.DateTimeField(auto_now_add=True)
-    created_by = models.IntegerField()
-
-    def __str__(self):
-        return self.title
-
+        def __str__(self):              
+                return self.title
+    
 
 
     
