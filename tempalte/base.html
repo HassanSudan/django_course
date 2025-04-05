@@ -11,8 +11,7 @@
     <title>Django Blog Course </title>
 </head>
 <body>
-    <h1 class="text-center text-info">Hello From Base</h1>
-   {% block content %} {% endblock content %}
+    {% include './navbar.html' %} {% block content %} {% endblock content %}
 
 </body>
 

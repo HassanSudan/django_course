@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.timezone import now
 
 # Create your models here.
 
@@ -10,9 +11,8 @@ class Category(models.Model):
     def __str__(self):
         return self.name
     
-
-class Meta:
-        verbose_name_plural = 'Categories'
+    class Meta:
+        verbose_name_plural = "Categories"
 
 class Post(models.Model):
         title = models.CharField(max_length=100)
@@ -22,12 +22,11 @@ class Post(models.Model):
         content = models.TextField()
         puplished = models.BooleanField(default=False)
         tags = models.CharField(max_length=20)
-        created = models.DateTimeField(auto_now_add=True)
-        created_by = models.IntegerField()
+        # created = models.DateTimeField(auto_now_add=True)
+        # created_by = models.IntegerField()
 
         def __str__(self):              
                 return self.title
-    
 
 
     
