@@ -4,8 +4,10 @@ from blog.models import Category, Post
 # Create your views here.
 def HomeView(request):
     featurePosts = Post.objects.order_by('-id')[:3]
+    post_lists = Post.objects.order_by('-id')
     context = {
-        'featurePosts': featurePosts
+        'featurePosts': featurePosts,
+        'post_lists': post_lists
     }
     return render(request, 'blog/home.html', context)
 
