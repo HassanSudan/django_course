@@ -1,5 +1,8 @@
  
 {% extends 'base.html' %} {% block content %} 
+<div class="container">
+
+
 
 <div class="row gy4"> {% include './featurePosts.html' with featurePosts=featurePosts%}
 
@@ -10,6 +13,8 @@
         {% include './latestPost.html' with post_lists=post_lists %}
 
     </div>
+</div>
+
 </div>
 
 {% endblock content %}
