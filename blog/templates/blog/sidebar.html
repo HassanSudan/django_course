@@ -15,7 +15,7 @@
         </div>
     </div>
     <div class="mt-5">
-        <h5 class="text-muted">Social Media</h5>
+        <h5 class="text-muted">Social Media</h5> <hr />
         <p>
         <div class="btn-group">
             <a href=""> <i class="fab fa-facebook"></i></a>
@@ -26,4 +26,18 @@
         </div>
         </p>
     </div>
-</div>
+    <div class="mt-5">
+        <h5 class="text-muted">Categories</h5>
+        <hr />
+        <p>
+            <ul class="list-group">
+                {% for category in categories  %} 
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                {{category.name |upper}}
+            </li>
+             
+                {% endfor %}
+            </ul>
+        </p>
+    </div>
+</div> 

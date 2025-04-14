@@ -6,6 +6,7 @@ from django.core.paginator import Paginator
 def HomeView(request):
     featurePosts = Post.objects.order_by('-id')[:3]
     post_lists = Post.objects.order_by('-id')
+    categories = Category.objects.order_by('-id')
 
     paginator = Paginator (post_lists, 2)
     page = request.GET.get('page')
@@ -14,7 +15,8 @@ def HomeView(request):
     context = {
         'featurePosts': featurePosts,
         # 'post_lists': post_lists
-        'posts': posts
+        'posts': posts,
+        'categories': categories
     }
     return render(request, 'blog/home.html', context)
 
