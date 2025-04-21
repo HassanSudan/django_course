@@ -8,7 +8,7 @@ def HomeView(request):
     post_lists = Post.objects.order_by('-id')
     categories = Category.objects.order_by('-id')
 
-    paginator = Paginator (post_lists, 2)
+    paginator = Paginator (post_lists, 3)
     page = request.GET.get('page')
     posts = paginator.get_page(page)
 
